@@ -5,5 +5,6 @@ if(process.env.NODE_ENV === 'development') {
 
 module.exports = {
     MONGODB_URI : process.env.MONGO_URI,
-    JWT_SECRET: process.env.JWT_SECRET
+    JWT_SECRET: process.env.JWT_SECRET,
+    PORT: process.env.PORT
 }

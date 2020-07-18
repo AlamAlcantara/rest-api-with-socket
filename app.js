@@ -3,7 +3,7 @@ const path = require('path');
 
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const {MONGODB_URI} = require('./config');
+const {MONGODB_URI, PORT} = require('./config');
 const multer = require('multer');
 
 //GRAPHQL
@@ -106,7 +106,7 @@ app.use('/graphql', graphqlHTTP({
 
 mongoose.connect(MONGODB_URI)
     .then(result => {
-        app.listen(8080);
+        app.listen(PORT || 8080);
         console.log('CONNECTED!');
     })
     .catch(err => {
